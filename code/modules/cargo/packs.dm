@@ -954,6 +954,7 @@
 					/obj/structure/particle_accelerator/power_box,
 					/obj/structure/particle_accelerator/end_cap)
 	crate_name = "particle accelerator crate"
+	access = ACCESS_ENGINE
 
 /datum/supply_pack/engine/collector
 	name = "Radiation Collector Crate"
@@ -970,6 +971,7 @@
 	cost = 5000
 	contains = list(/obj/machinery/the_singularitygen)
 	crate_name = "singularity generator crate"
+	access = ACCESS_ENGINE
 
 /datum/supply_pack/engine/solar
 	name = "Solar Panel Crate"

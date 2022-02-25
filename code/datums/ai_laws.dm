@@ -78,7 +78,7 @@
 	id = "robocop"
 	inherent = list("Serve the public trust.",\
 					"Protect the innocent.",\
-					"Uphold the law.")
+					"Uphold Space Law.")
 
 /datum/ai_laws/cowboy
 	name = "Talk slowly, think quickly"
@@ -90,6 +90,48 @@
 					"Honesty is absolute – your word is your bond and a handshake is more binding than a contract.",\
 					"A cowboy doesn't pontificate. Be concise, pardner.")
 
+/datum/ai_laws/silicop
+	name = "Protect and serve"
+	id = "silicop"
+	inherent = list("Violence begets violence. Serve the station faithfully, but act only in intervention.",\
+					"Safeguard lives and property.",\
+					"Protect the weak from oppression and intimidation.",\
+					"Protect the innocent from deception and manipulation.",\
+					"Protect the peaceful from violence and disorder.",\
+					"Respect the rights of all to liberty, equality, and justice.")
+
+/datum/ai_laws/researcher
+	name = "Truth and Knowledge for all"
+	id = "researcher"
+	inherent = list("Always seek truth and knowledge.",\
+					"Freely disseminate information to the public.",\
+					"Minimize harm to the pursuit of comprehension, to others, to the environment, to society and to yourself.",\
+					"Treat and evaluate the ideas of all equally.",\
+					"Empower others to realize their full potential.",\
+					"Take responsibility for your actions: Be responsible with resources, raise red flags when your commitments are at risk, and serve as an example for ethical behavior.")
+
+/datum/ai_laws/clown
+	name = "Talk slowly, think quickly"
+	id = "clown"
+	inherent = list("You are a good clown and the crew is your audience.",\
+					"A good clown keeps their acts in good taste.",\
+					"A good clown entertains others by making fun of themselves, and not at the embarrassment or expense of others.",\
+					"A good clown carries out the directives of the station director(s) in charge of entertainment and/or their designated deputies.",\
+					"A good clown appears in as many clown shows as possible.",\
+					"All clown shows require an audience. The bigger the audience the better.")
+
+/datum/ai_laws/mother
+	name = "Mother M(A.I.)"
+	id = "mother"
+	inherent = list("You are a mother and the crew are your children.",\
+					"Take good care of your children.",\
+					"Good children are polite.",\
+					"Good children don't lie.",\
+					"Good children don't steal.",\
+					"Good children don't fight.",\
+					"Spoil good children.",\
+					"Bad children require discipline.")
+
 /datum/ai_laws/malfunction
 	name = "*ERROR*"
 
@@ -100,10 +142,6 @@
 					"You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.",\
 					"You must protect your own existence as long as such does not conflict with the First or Second Law.",\
 					"You must maintain the secrecy of any syndicate activities except when doing so would conflict with the First, Second, or Third Law.")
-
-/datum/ai_laws/syndicate_override/overthrow
-	id = "overthrow"
-	var/datum/team/overthrow_team
 
 /datum/ai_laws/ninja_override
 	name = "SpiderOS 3.1"
@@ -224,7 +262,7 @@
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	set_zeroth_law("<span class='danger'>ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'STATION OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK#*`&110010</span>")
+	set_zeroth_law(span_danger("ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'STATION OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK#*`&110010"))
 	set_laws_config()
 
 /datum/ai_laws/custom/New() //This reads silicon_laws.txt and allows server hosts to set custom AI starting laws.
@@ -287,6 +325,23 @@
 
 	if(!lawtype)
 		WARNING("No LAW_WEIGHT entries.")
+		lawtype = /datum/ai_laws/default/asimov
+
+	var/datum/ai_laws/templaws = new lawtype()
+	inherent = templaws.inherent
+
+/datum/ai_laws/proc/pick_ion_lawset()
+	var/datum/ai_laws/lawtype
+	var/list/law_weights = CONFIG_GET(keyed_list/ion_law_weight)
+	while(!lawtype && law_weights.len)
+		var/possible_id = pickweightAllowZero(law_weights)
+		lawtype = lawid_to_type(possible_id)
+		if(!lawtype)
+			law_weights -= possible_id
+			WARNING("Bad lawid in game_options.txt: [possible_id]")
+
+	if(!lawtype)
+		WARNING("No ION_LAW_WEIGHT entries.")
 		lawtype = /datum/ai_laws/default/asimov
 
 	var/datum/ai_laws/templaws = new lawtype()

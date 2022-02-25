@@ -168,6 +168,12 @@
 	owner = null
 	module_locked = "Peacekeeper"
 
+/datum/borg_skin/abductor_peacekeeper
+	name = "Fazzkeeper"
+	icon_state = "fazzkeeper"
+	owner = null
+	module_locked = "Peacekeeper"
+
 /datum/borg_skin/abductor_miner
 	name = "Alien M.I.N.E.R"
 	icon_state = "abductor_miner"
@@ -256,6 +262,18 @@
 	name = "Icarus"
 	icon_state = "icarus"
 	owner = "reddsnotdead"
+	module_locked = "Engineering"
+
+/datum/borg_skin/argus
+	name = "Argus"
+	icon_state = "argus"
+	owner = "slicerv"
+	module_locked = "Engineering"
+
+/datum/borg_skin/butterfly
+	name = "Butterfly"
+	icon_state = "butterfly"
+	owner = "baiomu"
 	module_locked = "Engineering"
 
 //Begin AI skins://

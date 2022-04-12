@@ -19,7 +19,8 @@
 
 /obj/item/organ/heart/gland/Initialize()
 	. = ..()
-	icon_state = pick(list("health", "spider", "slime", "emp", "species", "egg", "vent", "mindshock", "viral"))
+	if(icon_state == "gland")
+		icon_state = pick(list("health", "spider", "slime", "emp", "species", "egg", "vent", "mindshock", "viral"))
 
 /obj/item/organ/heart/gland/examine(mob/user)
 	. = ..()

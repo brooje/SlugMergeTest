@@ -1141,6 +1141,7 @@
 /*
  * Toy big red button
  */
+ //slug remove
 /obj/item/toy/redbutton
 	name = "big red button"
 	desc = "A big, plastic red button. Reads 'From HonkCo Pranks?' on the back."
@@ -1148,6 +1149,7 @@
 	icon_state = "bigred"
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
+
 
 /obj/item/toy/redbutton/attack_self(mob/user)
 	if (cooldown < world.time)
@@ -1161,6 +1163,8 @@
 
 	else
 		to_chat(user, span_alert("Nothing happens."))
+
+//slug end
 
 /*
  * Snowballs

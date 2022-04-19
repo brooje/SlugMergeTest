@@ -71,6 +71,9 @@
 /turf/closed/mineral/proc/gets_drilled(mob/user, triggered_by_explosion = FALSE, override_bonus = FALSE)
 	if (mineralType && (mineralAmt > 0))
 		if(triggered_by_explosion && !override_bonus)
+			//slug add
+			mineralAmt *= 2
+			//slug end
 			mineralAmt += 2 //bonus if it was exploded, USE EXPLOSIVES WOOO
 		new mineralType(src, mineralAmt)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)

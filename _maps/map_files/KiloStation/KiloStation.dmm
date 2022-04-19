@@ -85604,6 +85604,27 @@
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
+ 	},
+ /turf/open/floor/plasteel,
+ /area/maintenance/disposal/incinerator)
+"ffC" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/medical/medbay/central)
+ "fgf" = (
+ /obj/effect/turf_decal/stripes/corner,
+ /obj/effect/turf_decal/stripes/corner{
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
@@ -86845,6 +86866,12 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
+ 	},
+ /turf/open/floor/plating,
+ /area/maintenance/port)
+ "goI" = (
+ /obj/effect/turf_decal/stripes/line{
+ 	dir = 8
 /turf/open/space/basic,
 /area/maintenance/port)
 "goI" = (
@@ -98241,6 +98268,21 @@
 /area/space/nearstation)
 "rDF" = (
 /obj/effect/turf_decal/stripes/line{
+ 	icon_state = "panelscorched"
+ 	},
+ /area/maintenance/fore)
+"rGc" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/medical/medbay/central)
+ "rGm" = (
+ /obj/effect/decal/cleanable/dirt,
+ /obj/structure/cable/yellow{
 	dir = 1
 	},
 /obj/structure/grille/broken,
@@ -100189,6 +100231,20 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/green{
+ /obj/machinery/vending/gifts,
+ /turf/open/floor/plasteel,
+ /area/clerk)
+"tHt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/maintenance/port)
+ "tIl" = (
+ /obj/machinery/telecomms/processor/preset_one,
+ /turf/open/floor/circuit/green/telecomms,
 	dir = 8
 	},
 /obj/machinery/vending/gifts,
@@ -122936,6 +122992,13 @@ aQI
 ahj
 bdq
 bcU
+ aQN
+ gir
+ fit
+tHt
+ amA
+ aSL
+ awD
 aQN
 gir
 fit
@@ -124200,42 +124263,14 @@ and
 apW
 aBi
 awl
-aNS
-aNG
-aOe
-aJW
-aOh
-aPj
-aFl
-aFC
-aHG
-aHG
-aHG
-aRV
-aUY
-aQI
-aQJ
-aWT
-aQJ
-aQI
-aRq
-kzC
-bhS
-aVs
-ajm
-tUn
-dFM
-jrN
-jrN
-jrN
-ftr
-bLn
-brD
-bKu
-bKX
-cPc
-bKk
-bKk
+ aFl
+ aFC
+ aHG
+ffC
+rGc
+ aRV
+ aUY
+ aQI
 bKk
 bKk
 cBI
@@ -235627,3 +235662,4 @@ aaa
 aaa
 aaa
 "}
+
